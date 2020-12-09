@@ -26,6 +26,7 @@ def doctors(cursor:MySQLCursor, **kwargs) -> None:
         """
         try:
             cursor.execute(cmd)
+            print('Doctor added! ✔')
         except mysql.connector.Error as err:
             print(f'\nSomething went wrong!\n{err}')
     else:
@@ -59,6 +60,7 @@ def patients(cursor:MySQLCursor, **kwargs) -> None:
         """
         try:
             cursor.execute(cmd)
+            print('Patient added! ✔')
         except mysql.connector.Error as err:
             print(f'\nSomething went wrong!\n{err}')
     else:
