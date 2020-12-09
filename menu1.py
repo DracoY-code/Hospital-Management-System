@@ -15,9 +15,61 @@ loading2()
 if ch1==1:
     load_animation(welcome)
     print('\n \n 1.VIEW PATIENT DATA \n\n 2.ADD PATIENT DATA \n\n 3.SEARCH PATIENT \n\n 4.DELETE PATIENT')
+    
+    c=0
+    while True:
+        ch2 = int(input("Enter your choice (1/2/3/4) "))
+
+    
+        if ch2==1:
+            #function
+            loading2()
+        elif ch2==2:
+            #function
+            loading2()
+        elif ch2==3:
+            #func
+            loading2()
+        elif ch2==4:
+            #func
+            loading2()
+        else:
+            print('input wrong')
+            c+=1
+            if c >5:
+                break
+            else:
+                continue
+
 elif ch1==2:
     load_animation(welcome)
     print('\n \n 1.VIEW DOCTORS DATA \n\n 2.ADD DOCTORS DATA \n\n 3.SEARCH DOCTORS \n\n 4.DELETE DOCTORS')
+    
+    c=0
+    while True:
+        ch2= int(input("Enter your choice : "))
+        
+    
+        if ch2==1:
+            #function
+            loading2()
+        elif ch2==2:
+            #function
+            loading2()
+        elif ch2==3:
+            #func
+            loading2()
+        elif ch2==4:
+            #func
+            loading2()
+        else:
+            print('input wrong')
+            c+=1
+            if c >5:
+                break
+            else:
+                continue
+
 
     
 
