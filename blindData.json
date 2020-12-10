@@ -1,4 +1,96 @@
 {
-    "doctors": [],
-    "patients": []
+    "doctors": [
+        {
+            "docId": 101,
+            "docName": "Dr. Katie Douglas",
+            "speciality": "Cardiologist",
+            "age": 28,
+            "salary": 650000,
+            "joinDate": "2019-08-05"
+        },
+        {
+            "docId": 102,
+            "docName": "Dr. Jeff Bell",
+            "speciality": "Dentist",
+            "age": 38,
+            "salary": 500000,
+            "joinDate": "2017-11-11"
+        },
+        {
+            "docId": 112,
+            "docName": "Dr. Rebecca Strickland",
+            "speciality": "Psychiatrist",
+            "age": 30,
+            "salary": 550000,
+            "joinDate": "2018-08-08"
+        },
+        {
+            "docId": 107,
+            "docName": "Dr. Inez Clarke",
+            "speciality": "Oncologist",
+            "age": 35,
+            "salary": 700000,
+            "joinDate": "2018-05-23"
+        },
+        {
+            "docId": 134,
+            "docName": "Dr. Rosalie Patton",
+            "speciality": "Paediatrician",
+            "age": 26,
+            "salary": 450000,
+            "joinDate":"2020-01-09"
+        }
+    ],
+    "patients": [
+        {
+            "pId": 33,
+            "pName": "Christopher Higgins",
+            "age": 45,
+            "bloodGrp": "O+",
+            "docId": 101,
+            "dept": "Cardio",
+            "admitDate": "2020-05-12",
+            "roomNum": 6
+        },
+        {
+            "pId": 45,
+            "pName": "Colin May",
+            "age": 34,
+            "bloodGrp": "AB+",
+            "docId": 107,
+            "dept": "Cancer",
+            "admitDate": "2019-12-16",
+            "roomNum": 9
+        },
+        {
+            "pId": 23,
+            "pName": "Israel Silva",
+            "age": 22,
+            "bloodGrp": "A-",
+            "docId": 102,
+            "dept": "Dental",
+            "admitDate": "2020-11-30",
+            "roomNum": 3
+        },
+        {
+            "pId": 69,
+            "pName": "Melanie Christensen",
+            "age": 18,
+            "bloodGrp": "B+",
+            "docId": 112,
+            "dept": "Psychiatric",
+            "admitDate": "2020-02-23",
+            "roomNum": 8
+        },
+        {
+            "pId": 100,
+            "pName": "Kelly Peters",
+            "age": 13,
+            "bloodGrp": "B+",
+            "docId": 134,
+            "dept": "Paediatric",
+            "admitDate": "2020-08-25",
+            "roomNum": 1
+        }
+    ]
 }
