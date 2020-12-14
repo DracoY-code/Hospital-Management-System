@@ -3,11 +3,15 @@ import db.connector
 import db.del_rec
 import db.view_rec
 import decor.details
+import decor.animations
 import mysql.connector
 
 
 if conn:=db.connector.connect():
     cursor = conn.cursor()
+
+    decor.animations.loading()  #ADDED
+    print("DATATRIX - Hospital Database Management System")
 
     print("\n1 - Access Doctor's data")
     print("2 - Access Patient's data")
@@ -29,17 +33,23 @@ if conn:=db.connector.connect():
         while miss < 5:
             option = input('\nSelect operation (0 to exit): ')
             if option == '1':
+                
                 # View all
+                decor.animations.load_animation()  #ADDED
                 db.view_rec.doctors(cursor, 'all')
             elif option == '2':
+
                 # By id
                 db.view_rec.doctors(cursor, 'docId')
+                decor.animations.load_animation()  #ADDED
             elif option == '3':
                 # By name
                 db.view_rec.doctors(cursor, 'docName')
+                decor.animations.load_animation()  #ADDED
             elif option == '4':
                 # By department
                 db.view_rec.doctors(cursor, 'speciality')
+                decor.animations.load_animation()  #ADDED
             elif option == '5':
                 # Add doctor
                 print('\nPlease enter details of the doctor!\n')
@@ -67,7 +77,7 @@ if conn:=db.connector.connect():
                 except (TypeError, ValueError):
                     print('Please enter a valid id!')
             elif option == '0':
-                print('Exiting...👋')
+                decor.animations.load_animation('Exiting...👋')
                 break
             else:
                 miss += 1

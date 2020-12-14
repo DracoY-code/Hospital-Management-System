@@ -77,3 +77,8 @@
 [2020-12-10 03:13:35] admin PASS
 [2020-12-10 17:14:31] admin PASS
 [2020-12-10 18:31:27] nurse PASS
+[2020-12-14 18:05:05] python c:/Users/Vedanta/Documents/Hospital-Management-System/main.py FAIL
+[2020-12-14 18:05:47] admin FAIL
+[2020-12-14 18:06:43] ADMIN FAIL
+[2020-12-14 18:07:12] C:/Python38/python.exe c:/Users/Vedanta/Documents/Hospital-Management-System/setup.py FAIL
+[2020-12-14 18:07:30] ADMIN FAIL
