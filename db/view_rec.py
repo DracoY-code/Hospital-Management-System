@@ -1,4 +1,7 @@
 # The module to display the data from the database
+import time
+
+import decor.animations
 import decor.tabular
 import mysql.connector
 from mysql.connector.connection import MySQLCursor
@@ -30,7 +33,9 @@ def doctors(cursor:MySQLCursor, field:str) -> None:
 
     try:
         cursor.execute(query)
+        decor.animations.load_animation()
         decor.tabular.doctors(cursor.fetchall())
+        time.sleep(5)
     except mysql.connector.Error as err:
         print(f'\nSomething went wrong!\n{err}')
 
@@ -70,6 +75,8 @@ def patients(cursor:MySQLCursor, field:str) -> None:
 
     try:
         cursor.execute(query)
+        decor.animations.load_animation()
         decor.tabular.patients(cursor.fetchall())
+        time.sleep(5)
     except mysql.connector.Error as err:
         print(f'\nSomething went wrong!\n{err}')

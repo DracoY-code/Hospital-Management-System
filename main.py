@@ -1,16 +1,17 @@
+# The main program
 import db.add_rec
 import db.connector
 import db.del_rec
 import db.view_rec
-import decor.details
 import decor.animations
+import decor.details
 import mysql.connector
 
 
 if conn:=db.connector.connect():
     cursor = conn.cursor()
 
-    decor.animations.loading()  #ADDED
+    decor.animations.loading()
     print("DATATRIX - Hospital Database Management System")
 
     print("\n1 - Access Doctor's data")
@@ -22,34 +23,28 @@ if conn:=db.connector.connect():
 
     if choice == '1':
         # Doctors
-        print('\n1 - View All')
-        print('2 - View (by id)')
-        print('3 - View (by name)')
-        print('4 - View (by department)')
-        print('5 - Add Doctor')
-        print('6 - Delete Doctor')
-        print('0 - Exit')
-
         while miss < 5:
-            option = input('\nSelect operation (0 to exit): ')
-            if option == '1':
-                
+            print('\n1 - View All')
+            print('2 - View (by id)')
+            print('3 - View (by name)')
+            print('4 - View (by department)')
+            print('5 - Add Doctor')
+            print('6 - Delete Doctor')
+            print('0 - Exit')
+
+            option = input('\nSelect operation: ')
+            if option == '1':                
                 # View all
-                decor.animations.load_animation()  #ADDED
                 db.view_rec.doctors(cursor, 'all')
             elif option == '2':
-
                 # By id
                 db.view_rec.doctors(cursor, 'docId')
-                decor.animations.load_animation()  #ADDED
             elif option == '3':
                 # By name
                 db.view_rec.doctors(cursor, 'docName')
-                decor.animations.load_animation()  #ADDED
             elif option == '4':
                 # By department
                 db.view_rec.doctors(cursor, 'speciality')
-                decor.animations.load_animation()  #ADDED
             elif option == '5':
                 # Add doctor
                 print('\nPlease enter details of the doctor!\n')
@@ -85,17 +80,17 @@ if conn:=db.connector.connect():
 
     elif choice == '2':
         # Patients
-        print('\n1 - View All')
-        print('2 - View (by id)')
-        print('3 - View (by name)')
-        print('4 - View (by admission date)')
-        print('5 - View (by room number)')
-        print('6 - Add Patient')
-        print('7 - Delete Patient')
-        print('0 - Exit')
-        
         while miss < 5:
-            option = input('\nSelect operation (0 to exit): ')
+            print('\n1 - View All')
+            print('2 - View (by id)')
+            print('3 - View (by name)')
+            print('4 - View (by admission date)')
+            print('5 - View (by room number)')
+            print('6 - Add Patient')
+            print('7 - Delete Patient')
+            print('0 - Exit')
+            
+            option = input('\nSelect operation: ')
             if option == '1':
                 # View all
                 db.view_rec.patients(cursor, 'all')
@@ -138,14 +133,14 @@ if conn:=db.connector.connect():
                 except (TypeError, ValueError):
                     print('Please enter a valid id!')
             elif option == '0':
-                print('Exiting...👋')
+                decor.animations.load_animation('Exiting...👋')
                 break
             else:
                 miss += 1
                 print(f'Invalid! {5-miss} bad inputs left!')
 
     elif choice == '0':
-        print('Exiting...👋')
+        decor.animations.load_animation('Exiting...👋')
 
     else:
         print('Invalid ❌❌❌')

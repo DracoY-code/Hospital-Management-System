@@ -16,7 +16,7 @@ def connect() -> MySQLConnection:
 
     if _logged_in(user, passwd):
         try:
-            connection = mysql.connector.connect(**db.config.me)
+            connection = mysql.connector.connect(**db.config.get_creds())
             if connection.is_connected():
                 print('\nSuccessfully connected to the database! 🐬')
                 _write_log(user, now, True)
@@ -27,6 +27,24 @@ def connect() -> MySQLConnection:
     else:
         print('\nLogin unsuccessful.')
         _write_log(user, now, False)
+
+
+def connect_to_root() -> MySQLConnection:
+    """Returns a root connection to the database.
+    """
+    try:
+        root_pass = getpass.getpass('ROOT PASSWORD: ')
+        connection = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            passwd=root_pass
+        )
+        if connection.is_connected():
+            db.config.write_creds(root_pass)
+            print('Connected as root!')
+            return connection
+    except mysql.connector.Error as err:
+        print(f'\nSomething went wrong!\{err}')
 
 
 def _logged_in(user:str, passwd:str) -> bool:
